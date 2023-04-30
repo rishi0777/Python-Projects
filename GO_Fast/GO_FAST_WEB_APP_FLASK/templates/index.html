@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+<!--NAV BAR-->
+{% block nav_home %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/">HOME</a>
+</li>
+{% endblock nav_home %}
+
+{% block nav_register %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/register">REGISTER</a>
+</li>
+{% endblock nav_register %}
+
+{% block nav_speed_check %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/speed">SPEED CHECK</a>
+</li>
+{% endblock nav_speed_check %}
+
+{% block nav_about %}
+<li class="nav-item active">
+    <a class="nav-link under" href="https://www.rishimishra.me/">ABOUT</a>
+</li>
+{% endblock nav_about %}
+
+
+<!--content-->
+{% block div_content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main_index.css') }}">
+
+<div class="container mt-5 mb-4 mx-auto">
+
+    <div class="row mt-5  mx-auto">
+        <h1 class="col">HEY, USER! </h1>
+    </div>
+
+    <div class="row  mx-auto">
+        <h3 class="col">WELCOME TO GO FAST SPEED TEST</h3>
+    </div>
+
+    <div class="row mx-auto mt-5 ">
+        <p class="col">Click on the GO_FAST button, then you will be redirected to the page from where you can start
+            the test, after the test is over if your speed comes out to be more than or equal to 5 words per minute 
+            and accuracy is greater than or equal to 40 then GO FAST Corporation will
+            happily provide you a certificate, you just have to click the GENERATE CERTIFICATE button on the result
+            page then fill the correct details about you in the redirected form if all the details of the form are 
+            validated successfully then you will be redirected to a randomly generated page on which you can see your 
+            certificate with your name on it.
+        </p>
+    </div>
+    <div class="row mx-auto">
+        <p class="col" style="font-weight: bold;">
+            NOTE KEEP IN MIND ONLY WHEN YOUR SPEED AND ACCURACY SATISIFIES THE GIVEN CONDITION THEN ONLY GENERATE
+            CERTIFICATE BUTTON WILL APPEAR ON THE RESULT PAGE<br>
+            REGARDS RISHI MISHRA
+        </p>
+    </div>
+    <div class="row mt-2 mb-5 mx-auto">
+        <button class="col-md-12 mx-3 btn_go_fast btn btn-outline-danger" type="button">GO_FAST</button>
+    </div>
+</div>
+{% endblock div_content %}
+
+
+<!--FOOTER-->
+{% block footer_1_a_mail %}
+    <a href="https://www.rishimishra.me/#contact">
+{% endblock footer_1_a_mail %}
+{% block footer_1_a_git %}
+    <a href="https://github.com/rishi-777">
+{% endblock footer_1_a_git %}
+{% block footer_1_a_linkedin %}
+    <a href="https://www.linkedin.com/in/rishi-mishra/">
+{% endblock footer_1_a_linkedin %}
+{% block footer_1_a_about %}
+    <a href="https://rishimishra.me">
+{% endblock footer_1_a_about %}
+
+
+<!--SCRIPT-->
+{% block script_for_each %}
+<script type="text/javascript">
+    var main_flag_test = "{{main_flag_test}}"
+</script>
+
+<script src="{{ url_for('static', filename = 'js/script_index.js') }}">
+</script>
+{% endblock script_for_each %}

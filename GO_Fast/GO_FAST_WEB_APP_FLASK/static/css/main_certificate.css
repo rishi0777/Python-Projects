@@ -1,0 +1,41 @@
+.part1{
+    flex:0.6;
+}
+.part2{
+    flex:0.4;
+}
+
+.main_cont{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e1d27;
+    justify-content: center;
+    border-radius: 1rem;
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-right: 3%;
+}
+
+.note_head{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;;
+    font-size: 1.4rem;
+}
+.note_desc{
+    font-size: 0.9rem;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;;
+}
+.text_sub{
+    font-size: 0.9rem;
+}
+.btn{
+    border-color: white;
+    color: white;
+    font-weight: bold;
+    border-width: 0.2rem;
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+#head_register:hover, #head_home:hover, #head_about:hover{
+    color: #ffc85c;
+}

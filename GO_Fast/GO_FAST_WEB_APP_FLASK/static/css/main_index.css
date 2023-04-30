@@ -1,0 +1,30 @@
+.container{
+    background-color:#1e1d27;
+    color: #d6d6d6;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 2.8rem;
+}
+
+h1{
+    color: #EE573d;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+h3{
+    color: #E94B3C;
+    font-family: 'Courier New', Courier, monospace;
+}
+p{
+    
+    color: darksalmon;
+    font-family: 'Courier New', Courier, monospace;
+}
+.btn{
+    color:darksalmon;
+    border-color: darksalmon;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+<!--NAV BAR-->
+{% block nav_home %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/">HOME</a>
+</li>
+{% endblock nav_home %}
+
+{% block nav_register %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/register">REGISTER</a>
+</li>
+{% endblock nav_register %}
+
+{% block nav_speed_check %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/speed">SPEED CHECK</a>
+</li>
+{% endblock nav_speed_check %}
+
+{% block nav_about %}
+<li class="nav-item active">
+    <a class="nav-link under" href="https://www.rishimishra.me/">ABOUT</a>
+</li>
+{% endblock nav_about %}
+
+
+<!--content-->
+{% block div_content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main_index.css') }}">
+
+<div class="container mt-5 mb-2  mx-auto">
+
+    <div class="row mt-5  mx-auto">
+        <h1 class="col">HEY, USER! </h1>
+    </div>
+
+    <div class="row  mx-auto">
+        <h3 class="col">KASHT KE LIYE KHED HAI</h3>
+    </div>
+
+    <div class="row mx-auto mt-5 ">
+        <p class="col">
+            Sorry for incovenience work is currently going on this page soon this service will also be available
+            on this website. Till that time enjoy the go fast speed checker without worrying about registration and
+            login. Stay Tuned for the lastest updates, you will definitely be informed shortly. Now go and
+            check your typing speed, if your speeed satisfies the eligibility criteria then you can also download
+            the certificate with your name provided by this organization for free.
+        </p>
+    </div>
+
+    <div class="row mx-auto">
+        <p class="col" style="font-weight: bold;">
+            NOTE KEEP IN MIND ONLY WHEN YOUR SPEED AND ACCURACY SATISIFIES THE GIVEN CONDITION THEN ONLY GENERATE
+            CERTIFICATE BUTTON WILL APPEAR ON THE RESULT PAGE<br>
+            REGARDS RISHI MISHRA
+        </p>
+    </div>
+    
+    <div class="row mt-3 mb-5 mx-auto">
+        <button class="col-md-12 mx-3 btn_register btn btn-outline-danger" type="button">SPEED CHECK</button>
+    </div>
+</div>
+{% endblock div_content %}
+
+
+<!--FOOTER-->
+{% block footer_1_a_mail %}
+    <a href="https://www.rishimishra.me/#contact">
+{% endblock footer_1_a_mail %}
+{% block footer_1_a_git %}
+    <a href="https://github.com/rishi-777">
+{% endblock footer_1_a_git %}
+{% block footer_1_a_linkedin %}
+    <a href="https://www.linkedin.com/in/rishi-mishra/">
+{% endblock footer_1_a_linkedin %}
+{% block footer_1_a_about %}
+    <a href="https://rishimishra.me">
+{% endblock footer_1_a_about %}
+
+
+<!--SCRIPT-->
+{% block script_for_each %}
+<script type="text/javascript">
+    var main_flag_test="{{main_flag_test}}"
+</script>
+
+<script src="{{ url_for('static', filename = 'js/script_register.js') }}">
+</script>
+{% endblock script_for_each %}

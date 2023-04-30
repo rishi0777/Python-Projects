@@ -1,0 +1,25 @@
+.part1{
+    flex:0.6;
+}
+.part2{
+    flex:0.4;
+}
+
+.container{
+    background-color:#1e1d27;
+    color: #d6d6d6;
+    justify-content: center;
+    padding: 8%;
+    padding-bottom: 12%;
+    border-radius: 2.8rem;
+
+}
+h1{
+    color: #E94B3C;
+    font-family: 'Courier New', Courier, monospace;
+}
+p{
+    
+    color: darksalmon;
+    font-family: 'Courier New', Courier, monospace;
+}

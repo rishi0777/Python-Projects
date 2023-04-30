@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename = 'svg/gofast.svg') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main_speed.css') }}">
+    <title>GO FAST</title>
+    
+</head>
+
+<body oncopy = "return false;" oncut="return false;" onpaste="return false;">
+
+    <div class="alert1">
+        <div id="dialogoverlay">
+        </div>
+        <div id="dialogbox">
+            <div>
+                <div id="dialogboxhead"></div>
+                <div id="dialogboxbody"></div>
+                <div id="dialogboxfoot">
+                    <div id="alert_buttons" style="display: none;">
+                        <button id="btn_alert" class="btn btn-alert btn-outline-danger">
+                        </button>
+                    </div>
+                    <div id="confirm_buttons" style="display: none;">
+                        <button id="btn_confirm1" class="btn btn-outline-danger mx-1">
+                        </button>
+                        <button id="btn_confirm2" class="btn btn-outline-danger mx-1">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-auto">
+        <div class="upper mx-1">
+        <div class="note">
+            <h3 class="note_head">DO NOT RELOAD THE PAGE OR PRESS F5 BUTTON OR CTRL + R</h3>
+            <p class="note_desc">Or else page will reload abruptly and you will see the error since,
+                encryption is used to evaluate the result of your test score.  
+            </p>
+        </div>
+        <div class="timer my-2">
+            <span class="label">2 : 00</span>
+        </div>
+    </div>
+        <form id="form1" class="form1" method="POST" action="/submit/{{main_flag_test}}">
+            <div class="paragraph">
+                <p class="p_text">
+                    {{str_para}}
+                </p>
+            </div>
+            <div class="entry my-3" >
+                {% if form.entry.errors %}
+                {{ form.entry(class="form-control" ,id="exampleFormControlTextarea1", rows="10") }}
+                <div class="invalid-feedback">
+                    {% for error in form.entry.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.entry(class="form-control" ,id="exampleFormControlTextarea1", rows="10", autofocus=true) }}
+                {% endif %}
+                <!--<textarea class="form-control" ,id="exampleFormControlTextarea1", rows="10"></textarea>-->
+            </div>
+
+
+        </form>
+        <div class="buttons">
+            <button class="btn btn-outline-danger btn_result">RESULT</button>
+        </div>
+    </div>
+
+    <!--SCRIPTS-->
+    <script src="{{ url_for('static', filename = 'js/script_base.js') }}">
+    </script>
+
+    <script type="text/javascript">
+        var addr_submit = '{{unique_addr_submit}}'
+        var main_flag_test="{{main_flag_test}}"
+    </script>
+
+    <script src="{{ url_for('static', filename = 'js/script_speed.js') }}">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"crossorigin="anonymous">
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

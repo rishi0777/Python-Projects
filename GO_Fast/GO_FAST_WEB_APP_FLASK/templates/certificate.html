@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+
+<!--NAV BAR-->
+{% block nav_home %}
+<li class="nav-item active">
+    <a id="head_home" class="nav-link under">HOME</a>
+</li>
+{% endblock nav_home %}
+{% block nav_register %}
+<li class="nav-item active">
+    <a id="head_register" class="nav-link under">REGISTER</a>
+</li>
+{% endblock nav_register %}
+{% block nav_about %}
+<li class="nav-item active">
+    <a id="head_about" class="nav-link under">ABOUT</a>
+</li>
+{% endblock nav_about %}
+
+
+<!--content-->
+{% block div_content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main_certificate.css') }}">
+
+<div class="container main_cont my-4 sm md lg xl xxl">
+
+    <div class="container head_cont">
+        <h3 class="row mx-auto note_head">
+            DO NOT RELOAD THE PAGE OR PRESS F5 BUTTON OR CTRL + R
+        </h3>
+
+        <div class="row mx-auto note_desc">
+            Or else all your data will be lost, click on generate certificate button to download the certificate
+        </div>
+    </div>
+
+    <div class="container body_cont ">
+        <form id="form_c" method="POST" action={{addr}}>
+            {{ cform.hidden_tag() }}
+            <fieldset class="form-group">
+                <!--USER NAME FIELD-->
+                <div class="form-group mt-3">
+                    {{ cform.user_name.label(class="form-control-label text_sub my-3") }}
+                    {% if cform.user_name.errors %}
+                    {{ cform.user_name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in cform.user_name.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ cform.user_name(class="form-control form-control-lg text_entry") }}
+                    {% endif %}
+                </div>
+
+                <!--USER EMAIL FIELD-->
+                <div class="form-group">
+                    {{ cform.user_email.label(class="form-control-label text_sub my-3") }}
+                    {% if cform.user_email.errors %}
+                    {{ cform.user_email(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in cform.user_email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ cform.user_email(class="form-control form-control-lg text_entry") }}
+                    {% endif %}
+                </div>
+
+                <!--USER COLLEGE FIELD-->
+                <div class="form-group">
+                    {{ cform.user_college.label(class="form-control-label text_sub my-3") }}
+                    {% if cform.user_college.errors %}
+                    {{ cform.user_college(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in cform.user_college.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ cform.user_college(class="form-control form-control-lg text_entry") }}
+                    {% endif %}
+                </div>
+
+                <!--SUBMIT FIELD-->
+                <div class="form-group mt-5">
+                    <!---->{{ cform.result_submit(class="btn btn-outline-danger text_bt" ,id="generate_certificate") }}
+                    <!---->
+                    <!--<button class="btn btn-outline-danger btn_result" id="generate_certificate">GENERATE CERTIFICATE
+                    </button>_-->
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock div_content %}
+
+
+<!--FOOTER-->
+{% block footer_1_a_mail %}
+<a id="foot_mail">
+{% endblock footer_1_a_mail %}
+
+{% block footer_1_a_git %}
+<a id="foot_git">
+{% endblock footer_1_a_git %}
+
+{% block footer_1_a_linkedin %}
+<a id="foot_linkedin">
+{% endblock footer_1_a_linkedin %}
+
+{% block footer_1_a_about %}
+<a id="foot_about">
+{% endblock footer_1_a_about %}
+
+
+<!--SCRIPT-->
+{% block script_for_each %}
+
+<script src="{{ url_for('static', filename = 'js/script_certificate.js') }}">
+</script>
+{% endblock script_for_each %}

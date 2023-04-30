@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename = 'svg/gofast.svg') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main_base.css') }}">
+    <title>GO FAST CERTIFICATE</title>
+</head>
+
+<body style="height: 100vh;margin: 0;">
+    <div class="alert1">
+        <div id="dialogoverlay">
+        </div>
+        <div id="dialogbox">
+            <div>
+                <div id="dialogboxhead"></div>
+                <div id="dialogboxbody"></div>
+                <div id="dialogboxfoot">
+                    <div id="alert_buttons" style="display: none;">
+                        <button id="btn_alert" class="btn btn-alert btn-outline-danger">
+                        </button>
+                    </div>
+                    <div id="confirm_buttons" style="display: none;">
+                        <button id="btn_confirm1" class="btn btn-outline-danger mx-1">
+                        </button>
+                        <button id="btn_confirm2" class="btn btn-outline-danger mx-1">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <object data="{{ url_for('static', filename = 'certificate/created/GO FAST.pdf') }}" type="application/pdf"
+        width="100%" style="height: 100vh; margin: 0;">
+        <div class="container" 
+            style="background-color:#1e1d27;
+            color: #d6d6d6;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            padding-left: 5%;
+            padding-right: 5%;
+            border-radius: 2.8rem;">
+            <h3 style=" color: #EE573d;font-weight: bold;font-family: 'Courier New', Courier, monospace;">
+                PDF PLUGIN NOT SUPPORTED BY BROWSER
+            </h3>
+            <p style="color: darksalmon;font-family: 'Courier New', Courier, monospace;">
+                Your web browser doesn't support a PDF plugin.
+                So Instead you can click on download to
+                <a href="{{ url_for('static', filename = 'certificate/created/GO FAST.pdf') }}" class="under">
+                    DOWNLOAD </a> the PDF file.
+            </p>
+        </div>
+
+    </object>
+
+
+
+
+
+
+
+    <!--SCRIPT-->
+    <script src="{{ url_for('static', filename = 'js/script_base.js') }}"></script>
+    <script>
+        const btn_confirm_y = document.querySelector("#btn_confirm1");
+        const btn_confirm_n = document.querySelector("#btn_confirm2");
+        if (performance.navigation.type == 2) {
+
+            alert.render("", "NOT VALID YOU HAVE ALREADY SEEN YOUR CERTIFICATE", "REDIRECTING TO HOME PAGE IN 1 SECONDS", 'REDIRECT NOW');
+            btn_alert.addEventListener('click', click_btn_alert);
+            function click_btn_alert() {
+                alert.ok("/")
+            }
+            setTimeout(timeout, 1000);
+            function timeout() {
+                window.open("/", "_self")
+            }
+
+        }
+
+        function makeid(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+
+            }
+            return result;
+        }
+        id = makeid(10);
+        history.pushState({ id }, `Selected: ${id}`, `./cert/cert_number=${id}`)
+
+        window.onpopstate = function (event) {
+            history.pushState({ id }, `Selected: ${id}`, `./cert/cert_number=${id}`)
+
+            confirm.render("", "DATA WILL BE LOST", "DOWNLOAD THE CERTIFICATE<br>IF YOU HAVE NOT DOWNLOADED YET", "DOWNLOAD", "GO BACK");
+            btn_confirm_y.addEventListener('click', function () {
+                confirm.continue();
+            });
+            btn_confirm_n.addEventListener('click', function () {
+                confirm.abort('/')
+            });
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+*{
+    user-select: none;
+}
+*::selection {
+    background: none;
+  }
+*::-moz-selection {
+    background: none;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background:rgba(43, 42, 51, 1);
+    color: #FFFFFF;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+#dialogoverlay{
+	display: none;
+	opacity: 0.7;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(43, 42, 51, 1);
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #1e1d27;
+	border-radius:1rem; 
+    width: 40%;
+    padding: 3rem;
+	z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+#dialogbox > div > #dialogboxhead{ 
+    flex:0.2;
+    font-size:1rem; 
+    font-weight: bold; 
+    font-family: 'Dosis', sans-serif;
+    color:#EE573d;
+    text-align: center; 
+}
+#dialogbox > div > #dialogboxbody{  
+    flex: 0.5;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color:#FFF; 
+}
+#dialogbox > div > #dialogboxfoot{ 
+    flex: 0.3;
+}
+#alert_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+#confirm_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#btn_confirm1{
+    flex: 0.45;
+}
+#btn_confirm1{
+    flex: 0.45;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.upper{
+    display: flex;
+    justify-content: space-between;
+}
+.note{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0.78;
+}
+.note_head{
+    flex: 0.4;
+    color: darksalmon;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.4rem;
+}
+.note_desc{
+    flex: 0.3;
+    color: darksalmon;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: .9rem;
+}
+.timer{
+    flex: 0.22;
+    text-align: end;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.form1{
+    display: flex;
+    flex: 0.9;
+    flex-direction: column;
+}
+.paragraph{
+    flex: 0.4;
+    background-color: darksalmon;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.entry{
+    flex: 0.45;
+}
+.buttons{
+    flex: 0.1;
+}
+.btn{
+    color: #FFF;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-color: #FFF;
+    border-radius: 0.5rem;
+    border-width: 0.2rem;
+    width: 100%;
+}
+.p_text{
+    font-size: 1.1rem;
+    font-weight:400;
+    color: #1e1d27;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+@media only screen and (max-width: 1000px) {
+    html{
+        font-size: 90%;
+    }
+}
+@media only screen and (max-width: 850px) {
+    html{
+        font-size: 85%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    html{
+        font-size: 70%;
+    }
+}
+@media only screen and (max-width: 450px) {
+    html{
+        font-size: 65%;
+    }
+}

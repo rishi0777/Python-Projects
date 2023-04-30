@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+<!--NAV BAR-->
+{% block nav_home %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/">HOME</a>
+</li>
+{% endblock nav_home %}
+
+{% block nav_register %}
+<li class="nav-item active">
+    <a class="nav-link under" href="/register">REGISTER</a>
+</li>
+{% endblock nav_register %}
+
+{% block nav_about %}
+<li class="nav-item active">
+    <a class="nav-link under" href="https://www.rishimishra.me/">ABOUT</a>
+</li>
+{% endblock nav_about %}
+
+
+<!--content-->
+{% block div_content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main_default.css') }}">
+
+<div class="container my-auto">
+    <h1>
+        ERROR OCCURED
+    </h1>
+    <p class="my-5">
+        YOU ARE USING TOO MANY TIMES BROWER'S BACK, FORWARD AND RELOAD BUTTON OR YOU ARE REALOADING
+        THE PAGES ON WHICH ITS IS STRICTLTY MENTIONED THAT YOU CAN'T RELOAD THEM. THAT'S WHY THIS
+        ERROR OCCURRED BROWSE THE CONTENT LIKE THE NORMAL PEOPLE DOES. IF YOU DO SO CONTINUOUSLY THEN
+        YOU WILL BE BLOCKED FROM THE SERVER.
+        <br><br>
+        <span style="font-weight: bold;">REGARDS RISHI MISHRA</span><br>
+        <span style="font-weight: bold;">GO FAST</span>
+    </p>
+</div>
+
+{% endblock div_content %}
+
+
+<!--FOOTER-->
+{% block footer_1_a_mail %}
+    <a href="https://www.rishimishra.me/#contact">
+{% endblock footer_1_a_mail %}
+{% block footer_1_a_git %}
+    <a href="https://github.com/rishi-777">
+{% endblock footer_1_a_git %}
+{% block footer_1_a_linkedin %}
+    <a href="https://www.linkedin.com/in/rishi-mishra/">
+{% endblock footer_1_a_linkedin %}
+{% block footer_1_a_about %}
+    <a href="https://rishimishra.me">
+{% endblock footer_1_a_about %}

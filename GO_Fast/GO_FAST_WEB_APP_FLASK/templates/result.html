@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+
+<!--NAV BAR-->
+{% block nav_home %}
+<li class="nav-item active">
+    <a id="head_home" class="nav-link under">HOME</a>
+</li>
+{% endblock nav_home %}
+{% block nav_register %}
+<li class="nav-item active">
+    <a id="head_register" class="nav-link under">REGISTER</a>
+</li>
+{% endblock nav_register %}
+{% block nav_about %}
+<li class="nav-item active">
+    <a id="head_about" class="nav-link under">ABOUT</a>
+</li>
+{% endblock nav_about %}
+
+
+<!--content-->
+{% block div_content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main_result.css') }}">
+
+<div class="container sm md lg xl xxl">
+
+    <div class="container head_cont my-4">
+        <h3 class="row mx-3 note_head">
+            DO NOT RELOAD THE PAGE OR PRESS F5 BUTTON OR CTRL + R
+        </h3>
+
+        <div class="row mx-3 note_desc">
+            Or else all your data will be lost, if eligible then download the certificate
+        </div>
+    </div>
+
+    <div class="container body_cont my-4">
+        <div class="row">
+            <h3 id="main_heading" class="mx-auto" >
+                CONGRATULATIONS YOUR TEST GOT COMPLETED
+            </h3>
+        </div>
+
+        <div class="row mt-5 result">
+            <div class="col-md-5 mx-5 my-auto note">
+                <h3 id="test_result_label" class="test-head">TEST RESULTS </h3>
+                <h5 class="test-head">TYPING ACCURACY {{accuracy}} </h5>
+                <h5 class="test-head">TYPING SPEED {{speed}}</h5>
+            </div>
+            <div class="col-md-5 mx-auto lottie">
+                <span class="mx-auto" id="anim_trophy" style="display: none;">
+                    <lottie-player class="mx-auto" src="https://assets7.lottiefiles.com/packages/lf20_xldzoar8.json"
+                        background="transparent" speed="0.75" style="width: 15rem; height: 15rem;" loop autoplay>
+                    </lottie-player>
+                </span>
+                <span class="mx-auto" id="anim_done" style="display: none;">
+                    <lottie-player class="mx-auto" src="https://assets4.lottiefiles.com/packages/lf20_N7Lsmq.json"
+                        background="transparent" speed="0.5" style="width: 15rem; height: 15rem;" loop autoplay>
+                    </lottie-player>
+                </span>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto" style="display: flex;">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 mx-auto my-auto">
+                <h4 id="e_label" class="eligible_label" style="display: none;">
+                    ELIGIBLE FOR DOWNLOADING CERTIFICATE
+                </h4>
+                
+                <button id="btn_gen_cert" class="mt-1 btn btn-outline-danger" style="display: none;" id="dwn_cert">
+                    CLICK ME TO GENERATE YOUR CERTIFICATE !!!
+                </button>
+
+                <a class="mt-4 btn btn-outline-danger btn_result" 
+                    href="{{ url_for('static', filename = 'app/GO FAST.exe') }}" download="GO FAST">
+                    DOWNLOAD APPLICATION COMPATIBLE WITH WINDOWS
+                </a>
+            </div>
+
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 mx-auto" style="padding-top:1rem">
+                <div id="sh_improve" class=" good_improve" style="display: none; flex-direction: column;">
+                    <span style="text-align: center; color: #f35762">
+                        NEEDS IMPROVEMENT!!!
+                    </span>
+                    <span style="text-align: center;margin-top: .5rem;">
+                        Brush up your skills for sometime then again give the go fast speed test to get the certificate
+                    </span>
+                </div>
+
+                <div id="sh_good" class="good_improve" style="display: none; flex-direction: column;">
+                    <span style="text-align: center;color: #ffdd40">
+                        GOOD WORK!!!
+                    </span>
+                    <span style="text-align: center;margin-top: .5rem;"> Now click on "Click Me To Generate Certificate" button
+                        and then you will be redirected to a page with unique link, on that page just fill the details
+                        you will get the
+                        certificate with your name.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+{% endblock div_content %}
+
+
+<!--FOOTER-->
+{% block footer_1_a_mail %}
+<a id="foot_mail">
+    {% endblock footer_1_a_mail %}
+
+    {% block footer_1_a_git %}
+    <a id="foot_git">
+        {% endblock footer_1_a_git %}
+
+        {% block footer_1_a_linkedin %}
+        <a id="foot_linkedin">
+            {% endblock footer_1_a_linkedin %}
+
+            {% block footer_1_a_about %}
+            <a id="foot_about">
+                {% endblock footer_1_a_about %}
+
+
+                <!--SCRIPT-->
+                {% block script_for_each %}
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                </script>
+
+                <script>
+                    var main_flag_test = "{{main_flag_test}}"
+                    var accuracy = "{{accuracy}}"
+                    var speed = "{{speed}}"
+                </script>
+
+                <script src="{{ url_for('static', filename = 'js/script_result.js') }}">
+                </script>
+                {% endblock script_for_each %}

@@ -1,0 +1,8 @@
+# About
+This code is used to create an .exe file for windows so that any user who wants to download the setup can
+download it and install it on their machine.For this tkinter modeule of python is used.
+
+### Command to make the exe file using pyinstaller
+```bash
+pyinstaller.exe --onefile --icon=icon.ico --windowed  main.py
+```

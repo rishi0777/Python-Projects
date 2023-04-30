@@ -1,0 +1,99 @@
+
+.part1{
+    flex:0.6;
+}
+.part2{
+    flex:0.4;
+}
+.body_cont{
+    background-color:#1e1d27;
+    justify-content: center;
+    border-radius: 1rem;
+    padding-top: 3%;
+    padding-bottom: 10%;
+}
+
+.note_head{
+    font-weight: normal;
+    color:#f7f1f1;
+    font-family: 'Courier New', Courier, monospace;;
+    font-size: 1.4rem;
+}
+.note_desc{
+    font-size: 0.9rem;
+    color:#f7f1f1;
+    font-family: 'Courier New', Courier, monospace;;
+}
+
+h3{
+    font-size:1.6rem ;
+    font-weight: bold;
+    color: #f7f1f1;
+    font-family: 'Courier New', Courier, monospace;
+}
+#main_heading{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.test-head{
+    font-size:1.4rem ;
+    text-align: center;
+    font-weight: bold;
+    color: #f7f1f1;
+    font-family: 'Courier New', Courier, monospace;
+}
+h5{
+    font-weight: bold;
+    color: #f7f1f1;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+p{
+    color: rgb(233, 150, 122);
+    font-family: 'Courier New', Courier, monospace;
+}
+.eligible_label{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f7f1f1;
+    font-family: 'Courier New', Courier, monospace;   
+}
+.good_improve{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f7f1f1;
+    font-family: 'Courier New', Courier, monospace;   
+}
+#head_register:hover, #head_home:hover, #head_about:hover{
+    color: #ffc85c;
+}
+.btn{
+    border-color: white;
+    color: white;
+    font-weight: bold;
+    font-family:  'Dosis', sans-serif;
+    border-width: 0.2rem;
+    font-size: 0.78rem;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    html{
+        font-size: 90%;
+    }
+}
+@media only screen and (max-width: 850px) {
+    html{
+        font-size: 85%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    html{
+        font-size: 70%;
+    }
+}
+@media only screen and (max-width: 450px) {
+    html{
+        font-size: 65%;
+    }
+}
